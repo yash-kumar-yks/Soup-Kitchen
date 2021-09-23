@@ -14,7 +14,7 @@
     top:0;
     /* border:1px solid red; */
 }
-button{
+.logo_name button{
     margin-left:20px;
     margin-right:20px;
     background-color: #4b829c;
@@ -35,7 +35,7 @@ button{
     /* border:1px solid red; */
 
 }
-h1{
+h2{
     margin-bottom:0%;
     /* border:1px solid red; */
 }

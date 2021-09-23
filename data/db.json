@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "name": "mango",
+            "src": "https://cdn.pixabay.com/photo/2014/02/01/17/30/apple-256268_960_720.jpg",
+            "id": 1
+        },
+        {
+            "name": "apple",
+            "src": "https://cdn.pixabay.com/photo/2014/02/01/17/30/apple-256268_960_720.jpg",
+            "id": 2
+        },
+        {
+            "name": "banana",
+            "src": "https://cdn.pixabay.com/photo/2014/02/01/17/30/apple-256268_960_720.jpg",
+            "id": 3
+        }
+    ]
+}
