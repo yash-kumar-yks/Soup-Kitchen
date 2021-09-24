@@ -10,11 +10,12 @@ function List({ data, val }) {
                 
                 if(datas.name==val){
                    return(
-                    <div>
                    
+                    <div>
+                    <Link to={`/ShowItem/${datas.id}`}>
                     <img src ={datas.src} key={datas.id} alt=""/>
                     <p> {datas.quantity}</p>
-                   
+                   </Link>
                     </div>)
             }}
                 
