@@ -1,10 +1,11 @@
 import useFetch from "./useFetch";
 import { useState } from "react";
+import List from "./List";
 const Home = () => {
-const  [val, setval] = useState('ShowAll')
+const  [val, setVal] = useState('ShowAll')
  const { error, isPending, data:datas } = useFetch('http://localhost:8000/items');
   const click=(e)=>{
-    setval(e.target.innerHTML);
+    setVal(String(e.target.innerHTML));
    
   }
   return (
@@ -17,7 +18,7 @@ const  [val, setval] = useState('ShowAll')
           
         </div>
       ))}
-      
+      <List val={val} data={datas} />
     </div>
   );
 }
