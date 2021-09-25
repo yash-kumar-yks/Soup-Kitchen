@@ -2,6 +2,7 @@ import './App.css';
 import Header from './Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ShowItem from './ShowItem';
+import AddItem from './AddItem';
 function App() {
   return (
    
@@ -12,10 +13,11 @@ function App() {
             <Route exact path="/">
               <Header />
             </Route>
-            <Route exact path="/create">
-            <Header />
+            <Route exact path="/AddItem/:id">
+          
+            <AddItem />
             </Route>
-            <Route path="/ShowItem/:id">
+            <Route exact path="/ShowItem/:id">
               <ShowItem />
             </Route>
           </Switch>
