@@ -5,33 +5,42 @@ import ShowItem from './ShowItem';
 import EditItem from './EditItem';
 import AddItem from './AddItem';
 import Home from './Home';
+import useFetch from './useFetch';
+
 function App() {
-  return (
-   
-   <Router>
+  const { data, error, isPending } = useFetch('http://localhost:8000/items/');
+ return (
+   <div>
+   {data && (
+    <> 
+    <Router>
       
         <div className="content">
           <Switch>
             <Route exact path="/">
               <Header />
-              <Home />
+              <Home data={data}/>
             </Route>
             <Route exact path="/EditItem/:id">
             <Header />
-            <EditItem />
+            <EditItem data={data} />
             </Route>
             <Route exact path="/AddItem">
-            <Header />
+            <Header  />
             <AddItem />
             </Route>
             <Route exact path="/ShowItem/:id">
             <Header />
-              <ShowItem />
+              <ShowItem data={data}/>
             </Route>
           </Switch>
         </div>
     
-    </Router>
+      </Router>
+      </>)
+    
+    }
+      </div>
   );
 }
 

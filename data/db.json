@@ -23,6 +23,18 @@
       "src": "https://static.toiimg.com/photo/68483689.cms",
       "quantity": "2",
       "id": 4
+    },
+    {
+      "name": "ss",
+      "src": "ss",
+      "quantity": "8",
+      "id": 5
+    },
+    {
+      "name": "banana",
+      "src": "https://cdn.pixabay.com/photo/2016/09/03/20/48/bananas-1642706__340.jpg",
+      "quantity": "2",
+      "id": 6
     }
   ]
 }

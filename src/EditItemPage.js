@@ -14,15 +14,15 @@ function AddItemPage({ name, src, id, quantity }) {
         <div className= "labels">
             <label>
                 Name:
-                <input type="text" name="name" placeholder={name} />
+                <input type="text" name="name" value={name} />
             </label>
             <label>
                 Image-URL:
-                <input type="text" name="name" placeholder={src} />
+                <input type="text" name="name" value={src} />
             </label>
             <label>
                ID
-                <input type="text" name="name" placeholder={id} />
+                <input type="text" name="name" value={id} />
             </label>
             <label>
                 Amount:

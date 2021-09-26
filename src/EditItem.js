@@ -1,30 +1,83 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
-import AddItemPage from './AddItemPage';
 import useFetch from './useFetch';
-function AddItem() {
-    const { id } = useParams();
-    console.log(id);
-    const { data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
-    {isPending && <h1 >Loading...</h1>}
-    { error && <div>{ error }</div> }
+import { useState, useEffect } from 'react';
+function EditItem({data}) {
+  const { id } = useParams();
+  let item=null;
+  data.map((data) => {
     
+    if(data.id == id)
+    item=data;
+    
+  });
+  data=item;
+console.log(data);
+  const [name, setName] = useState(data.name);
+  const [src, setSrc] = useState(data.src);
+  const [quantity, setQuantity] = useState(data.quantity);
 
-    return (
-        <div>
-            {data && (
-                <>
-                <AddItemPage name={data.name} src={data.src} id={id} quantity={data.quantity} />
-                   
-                    <button type="submit"> Update</button>
-                </>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data2 = { name, src, quantity };
 
-            )}
+    fetch('http://localhost:8000/items/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data2)
+    }).then(() => {
+      console.log('new item added');
+    })
+  }
 
-        </div>
-
-    );
-}
 
   
-    export default AddItem
+  return (
+    <div>
+       
+        {console.log('b')}
+          <form onSubmit={handleSubmit}>
+            <label>Item Name:</label>
+            <input
+              type="text"
+              required
+              value={name}
+
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label>Image URL:</label>
+            <input
+              type="text"
+              required
+              value={src}
+
+              onChange={(e) => setSrc(e.target.value)}
+            />
+            <label>ID:</label>
+            <input
+              type="text"
+
+              placeholder={data.id}
+              readOnly
+            />
+            <label>Amount:</label>
+            <input
+              type="text"
+              required
+              value={quantity}
+
+              onChange={(e) => setQuantity(e.target.value)}
+            />
+
+            <button>Add Item</button>
+          </form>
+      
+
+    </div>
+
+  );
+
+}
+
+
+export default EditItem
