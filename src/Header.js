@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import BrandLogo from './images/mushroom.png';
-import Home from './Home';
+import { Link } from 'react-router-dom';
 function Header() {
     let toggle=false;
     function onclick(event){
@@ -24,10 +24,16 @@ function Header() {
                     <h2>Soup Kitchen</h2>
                     <h4> Admin Panel</h4>
                 </div>
-                <button onClick={onclick} type="submit"> View Inventory </button>
-                <button onClick={onclick} type="submit"> Add Inventory </button>
+               
+                <Link to={`/`}>
+                <button className="buttons" onClick={onclick} > View Inventory </button>
+                </Link>
+                <Link to={`/AddItem/0`}>
+                <button className="buttons" onClick={onclick} > Add Inventory </button>
+                </Link>
+               
             </div>
-            <Home />
+            
         </div>
     );
 }

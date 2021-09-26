@@ -4,25 +4,42 @@ import AddItemPage from './AddItemPage';
 import useFetch from './useFetch';
 function AddItem() {
     const { id } = useParams();
-    const { data: data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
-   
+    console.log(id);
+    const { data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
 
+if(id>0){
+    return (
+        <div>
+            {data && (
+                <>
+                <AddItemPage name={data.name} src={data.src} id={id} quantity={data.quantity} />
+                   
+                    <button type="submit"> Update</button>
+                </>
+
+            )}
+
+        </div>
+
+    );}
+
+    else{
         return (
-           <div>
-                     { data && (
-      <>
-        <h2>{ data.name }</h2>
-       <img src={data.src} alt =""/>
-       
-      </>
-     
-    )}
-           
-           </div>
-           
-        );
-
+            <div>
+                {data && (
+                    <>
+                    <AddItemPage name="" src="" id="" quantity="" />
+                        <button type="submit"> Update</button>
+                    </>
     
+                )}
+    
+            </div>
+    
+        );
+    }
+
+
 
 }
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import AddItem from "./AddItem";
 const ShowItem = () => {
   const { id } = useParams();
-  const { data: data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
+  const { data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
   return (
     <div className="blog-details">
     { isPending && <div>Loading...</div> }
