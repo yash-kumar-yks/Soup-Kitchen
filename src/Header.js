@@ -28,7 +28,7 @@ function Header() {
                 <Link to={`/`}>
                 <button className="buttons" onClick={onclick} > View Inventory </button>
                 </Link>
-                <Link to={`/AddItem/0`}>
+                <Link to={`/AddItem/?`}>
                 <button className="buttons" onClick={onclick} > Add Inventory </button>
                 </Link>
                

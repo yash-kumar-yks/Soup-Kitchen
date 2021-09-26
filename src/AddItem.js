@@ -1,46 +1,29 @@
 import React from 'react'
-import { useParams } from "react-router-dom";
-import AddItemPage from './AddItemPage';
-import useFetch from './useFetch';
-function AddItem() {
-    const { id } = useParams();
-    console.log(id);
-    const { data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
 
-if(id>0){
+function AddItem() {
     return (
         <div>
-            {data && (
-                <>
-                <AddItemPage name={data.name} src={data.src} id={id} quantity={data.quantity} />
-                   
-                    <button type="submit"> Update</button>
-                </>
-
-            )}
-
+        <div className= "labels">
+        <label>
+            Name:
+            <input type="text" name="name"  />
+        </label>
+        <label>
+            Image-URL:
+            <input type="text" name="name"  />
+        </label>
+        <label>
+           ID
+            <input type="text" name="name" />
+        </label>
+        <label>
+            Amount:
+            <input type="text" name="name"  />
+        </label>
         </div>
-
-    );}
-
-    else{
-        return (
-            <div>
-                {data && (
-                    <>
-                    <AddItemPage name="" src="" id="" quantity="" />
-                        <button type="submit"> Update</button>
-                    </>
-    
-                )}
-    
-            </div>
-    
-        );
-    }
-
-
-
+        <button type="submit"> POST..</button>
+        </div>
+    )
 }
 
 export default AddItem

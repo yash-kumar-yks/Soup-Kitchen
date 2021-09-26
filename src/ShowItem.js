@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import { Link } from "react-router-dom";
-import AddItem from "./AddItem";
+import EditItem from "./EditItem";
 const ShowItem = () => {
   const { id } = useParams();
   const { data, error, isPending } = useFetch('http://localhost:8000/items/' + id);
@@ -16,7 +16,7 @@ const ShowItem = () => {
        
       </article>
     )}
-    <Link to={`/AddItem/${id}`}>
+    <Link to={`/EditItem/${id}`}>
     <button > Update Item</button>
   </Link>
     <button type="submit"> Delete Item</button>

@@ -2,6 +2,7 @@ import './App.css';
 import Header from './Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ShowItem from './ShowItem';
+import EditItem from './EditItem';
 import AddItem from './AddItem';
 import Home from './Home';
 function App() {
@@ -15,7 +16,11 @@ function App() {
               <Header />
               <Home />
             </Route>
-            <Route exact path="/AddItem/:id">
+            <Route exact path="/EditItem/:id">
+            <Header />
+            <EditItem />
+            </Route>
+            <Route exact path="/AddItem">
             <Header />
             <AddItem />
             </Route>
