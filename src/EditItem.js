@@ -6,10 +6,10 @@ function EditItem({data}) {
   const { id } = useParams();
  let item=null;
  data.map((data)=>{
-   if(data.id==id)
-   item=data;
- })
- data=item;
+  if(data.id==id)
+  item=data;
+})
+data=item;
 console.log(data);
   const [name, setName] = useState(data.name);
   const [src, setSrc] = useState(data.src);
@@ -18,14 +18,16 @@ console.log(data);
   const handleSubmit = (e) => {
     e.preventDefault();
     const data2 = { name, src, quantity };
-
+    fetch('http://localhost:8000/items/' + id, {
+      method: 'DELETE'
+    })
     fetch('http://localhost:8000/items/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data2)
     }).then(() => {
       history.push('/');
-      
+      //dispatch method='POST'
     })
   }
 

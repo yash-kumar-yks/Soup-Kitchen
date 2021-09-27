@@ -2,14 +2,21 @@ import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
 import useFetch from "./useFetch";
-const ShowItem = () => {
+const ShowItem = ({data}) => {
   const { id } = useParams();
   const history = useHistory();
-  const { data, error, isPending } = useFetch('http://localhost:8000/items/'+id);
+  let item=null;
+  data.map((data)=>{
+    if(data.id==id)
+    item=data;
+  })
+  data=item;
+  console.log(item);
   const handleClick = () => {
     fetch('http://localhost:8000/items/' + id, {
       method: 'DELETE'
     }).then(() => {
+      //dispatch method=='DELETE'
       history.push('/');
     }) 
   }

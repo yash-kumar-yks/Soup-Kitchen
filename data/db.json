@@ -7,12 +7,6 @@
       "quantity": 2
     },
     {
-      "name": "apple",
-      "src": "https://cdn.pixabay.com/photo/2014/02/01/17/30/apple-256268_960_720.jpg",
-      "id": 2,
-      "quantity": 1
-    },
-    {
       "name": "banana",
       "src": "https://cdn.pixabay.com/photo/2016/09/03/20/48/bananas-1642706__340.jpg",
       "id": 3,
@@ -23,6 +17,18 @@
       "src": "https://static.toiimg.com/photo/68483689.cms",
       "quantity": "2",
       "id": 4
+    },
+    {
+      "name": "apple",
+      "src": "https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g=",
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "name": "ss",
+      "src": "ss",
+      "quantity": "5",
+      "id": 7
     }
   ]
 }

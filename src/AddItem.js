@@ -11,12 +11,13 @@ function AddItem() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { name, src, quantity };
-
+   
     fetch('http://localhost:8000/items/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     }).then(() => {
+      //dispatch method='POST'
       history.push('/');
     })
   }
