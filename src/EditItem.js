@@ -1,22 +1,14 @@
 import React from 'react'
-import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useFetch from './useFetch';
-import { useState, useEffect } from 'react';
-function EditItem({data}) {
-  const { id } = useParams();
-  let item=null;
-  data.map((data) => {
-    
-    if(data.id == id)
-    item=data;
-    
-  });
-  data=item;
+import { useState } from 'react';
+function EditItem() {
+  const { data, error, isPending } = useFetch('http://localhost:8000/items/');
 console.log(data);
-  const [name, setName] = useState(data.name);
-  const [src, setSrc] = useState(data.src);
-  const [quantity, setQuantity] = useState(data.quantity);
-
+  const [name, setName] = useState('');
+  const [src, setSrc] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     const data2 = { name, src, quantity };
@@ -26,15 +18,17 @@ console.log(data);
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data2)
     }).then(() => {
-      console.log('new item added');
+      history.push('/');
+      
     })
   }
 
 
   
   return (
-    <div>
-       
+    <div>{
+       data && (
+         <>
         {console.log('b')}
           <form onSubmit={handleSubmit}>
             <label>Item Name:</label>
@@ -71,7 +65,8 @@ console.log(data);
 
             <button>Add Item</button>
           </form>
-      
+      </>
+      )}
 
     </div>
 

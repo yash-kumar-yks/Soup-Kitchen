@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 function AddItem() {
 
     
   const [name, setName] = useState('');
   const [src, setSrc] = useState('');
   const [quantity, setQuantity] = useState(0);
-
+  const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { name, src, quantity };
@@ -16,7 +17,7 @@ function AddItem() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     }).then(() => {
-      console.log('new item added');
+      history.push('/');
     })
   }
 

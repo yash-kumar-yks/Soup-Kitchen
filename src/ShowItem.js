@@ -1,17 +1,11 @@
 import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
-const ShowItem = ({data}) => {
+import useFetch from "./useFetch";
+const ShowItem = () => {
   const { id } = useParams();
   const history = useHistory();
-  let item=null;
-  data.map((data) => {
-    
-    if(data.id == id)
-    item=data;
-    
-  });
-  data=item;
+  const { data, error, isPending } = useFetch('http://localhost:8000/items/'+id);
   const handleClick = () => {
     fetch('http://localhost:8000/items/' + id, {
       method: 'DELETE'
@@ -21,7 +15,10 @@ const ShowItem = ({data}) => {
   }
   return (
     <div className="blog-details">
+    {data && (
+      
     
+    <>
       <article>
         <h2>{ data.name }</h2>
        <img src={data.src} alt =""/>
@@ -31,10 +28,10 @@ const ShowItem = ({data}) => {
     <Link to={`/EditItem/${id}`}>
     <button > Update Item</button>
   </Link>
-    <button  type="submit"> Delete Item</button>
-  </div>
-
-   
+    <button onClick={handleClick} type="submit"> Delete Item</button>
+  </>
+    )}
+    </div>
   );
 }
  
