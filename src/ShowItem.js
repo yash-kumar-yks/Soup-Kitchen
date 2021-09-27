@@ -1,10 +1,9 @@
-import { useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
 const ShowItem = ({data}) => {
   const { id } = useParams();
-  
+  const history = useHistory();
   let item=null;
   data.map((data) => {
     
@@ -13,6 +12,13 @@ const ShowItem = ({data}) => {
     
   });
   data=item;
+  const handleClick = () => {
+    fetch('http://localhost:8000/items/' + id, {
+      method: 'DELETE'
+    }).then(() => {
+      history.push('/');
+    }) 
+  }
   return (
     <div className="blog-details">
     
@@ -25,7 +31,7 @@ const ShowItem = ({data}) => {
     <Link to={`/EditItem/${id}`}>
     <button > Update Item</button>
   </Link>
-    <button type="submit"> Delete Item</button>
+    <button  type="submit"> Delete Item</button>
   </div>
 
    
