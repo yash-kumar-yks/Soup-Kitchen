@@ -1,13 +1,19 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams} from "react-router-dom";
 import useFetch from './useFetch';
 import { useState } from 'react';
-function EditItem() {
-  const { data, error, isPending } = useFetch('http://localhost:8000/items/');
+function EditItem({data}) {
+  const { id } = useParams();
+ let item=null;
+ data.map((data)=>{
+   if(data.id==id)
+   item=data;
+ })
+ data=item;
 console.log(data);
-  const [name, setName] = useState('');
-  const [src, setSrc] = useState('');
-  const [quantity, setQuantity] = useState('');
+  const [name, setName] = useState(data.name);
+  const [src, setSrc] = useState(data.src);
+  const [quantity, setQuantity] = useState(data.quantity);
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -63,7 +69,7 @@ console.log(data);
               onChange={(e) => setQuantity(e.target.value)}
             />
 
-            <button>Add Item</button>
+            <button>Edit Item</button>
           </form>
       </>
       )}
