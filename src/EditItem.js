@@ -1,6 +1,5 @@
 import React from 'react'
 import { useHistory, useParams} from "react-router-dom";
-import useFetch from './useFetch';
 import { useState } from 'react';
 function EditItem({data}) {
   const { id } = useParams();
@@ -10,11 +9,18 @@ function EditItem({data}) {
   item=data;
 })
 data=item;
-console.log(data);
-  const [name, setName] = useState(data.name);
+
+    const [name, setName] = useState(data.name);
   const [src, setSrc] = useState(data.src);
-  const [quantity, setQuantity] = useState(data.quantity);
+  const [quantity, setQuantity] = useState((parseInt)(data.quantity));
   const history = useHistory();
+  const increment = () => {
+    setQuantity(quantity =>quantity + 1);
+}
+const decrement = () => {
+  setQuantity(quantity => quantity - 1);
+}
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data2 = { name, src, quantity };
@@ -64,15 +70,17 @@ console.log(data);
             />
             <label>Amount:</label>
             <input
-              type="text"
+              type="Number"
               required
               value={quantity}
 
               onChange={(e) => setQuantity(e.target.value)}
             />
-
-            <button>Edit Item</button>
+          
+            <button>Update Item</button>
           </form>
+          <button onClick={increment} > + </button>
+          <button onClick={decrement} > - </button>
       </>
       )}
 

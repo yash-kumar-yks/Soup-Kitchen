@@ -10,8 +10,9 @@
     padding-left:25vh;
     display:flex;
     align-items: center;
-   background-color:#F1F1F1;
+    background-color: rgb(238, 234, 226);
     top:0;
+    
     /* border:1px solid red; */
 }
 .buttons{

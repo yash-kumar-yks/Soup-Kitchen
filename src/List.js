@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ShowItem from './ShowItem';
-
+import './List.css';
 function List({ data, val }) {
     return (
         <div>
@@ -11,7 +11,7 @@ function List({ data, val }) {
                 if(datas.name==val){
                    return(
                    
-                    <div key={datas.id}>
+                    <div  className="list" key={datas.id}>
                     <Link to={`/ShowItem/${datas.id}`}>
                     <img src ={datas.src} key={datas.id} alt=""/>
                     <p> {datas.quantity}</p>

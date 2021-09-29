@@ -1,0 +1,22 @@
+button{
+    margin: 5px 10px 10px 5px;
+    background-color: rgb(25, 26, 25);
+    border: none;
+    color:  rgb(245, 243, 239);
+    padding: 5px 11px;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}
+.home-buttons{
+    max-width: 751px;
+    margin: 16px 310px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    border:1px solid red;
+}

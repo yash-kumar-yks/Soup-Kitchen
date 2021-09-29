@@ -1,7 +1,6 @@
 import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
-import useFetch from "./useFetch";
 const ShowItem = ({data}) => {
   const { id } = useParams();
   const history = useHistory();

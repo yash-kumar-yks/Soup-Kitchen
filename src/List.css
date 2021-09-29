@@ -1,0 +1,10 @@
+.list{
+    border: 1px solid black;
+    max-width: 751px;
+    margin:32px 310px;
+}
+.list img{
+    object-fit: contain;
+    width:60px;
+
+}

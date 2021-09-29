@@ -19,7 +19,7 @@ function Header() {
     return (
         <div>
             <div className="logo_div">
-                <img className="logo_img" src={BrandLogo} alt="Logo" ></img>
+                <img className="logo_img" src='https://raw.githubusercontent.com/team-soup/soup-kitchen/master/client/src/img/crockpot_logo.png' alt="Logo" ></img>
                 <div className="logo_name">
                     <h2>Soup Kitchen</h2>
                     <h4> Admin Panel</h4>
@@ -28,7 +28,7 @@ function Header() {
                 <Link to={`/`}>
                 <button className="buttons" onClick={onclick} > View Inventory </button>
                 </Link>
-                <Link to={`/AddItem/?`}>
+                <Link to={`/AddItem/`}>
                 <button className="buttons" onClick={onclick} > Add Inventory </button>
                 </Link>
                
