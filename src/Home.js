@@ -15,7 +15,7 @@ const Home = () => {
       {isPending && <h1 >Loading...</h1>}
       <div className="home-buttons" >
       {datas && datas.map(data => (
-       
+           
           <button onClick={click} key={data.id} type="submit">{data.name}</button>
         
        

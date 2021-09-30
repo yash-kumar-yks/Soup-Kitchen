@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css'
-import BrandLogo from './images/mushroom.png';
 import { Link } from 'react-router-dom';
 function Header() {
     let toggle=false;

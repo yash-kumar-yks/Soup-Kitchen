@@ -12,9 +12,11 @@ function List({ data, val }) {
                    return(
                    
                     <div  className="list" key={datas.id}>
-                    <Link to={`/ShowItem/${datas.id}`}>
+                    <Link  className='text-link' to={`/ShowItem/${datas.id}`}>
                     <img src ={datas.src} key={datas.id} alt=""/>
-                    <p> {datas.quantity}</p>
+                   <div className="text-info">
+                    <p> <span> {datas.quantity}</span> kg {datas.name} </p>
+                    </div>
                    </Link>
                     </div>)
             }}

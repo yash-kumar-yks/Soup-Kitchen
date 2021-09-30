@@ -2,9 +2,27 @@
     border: 1px solid black;
     max-width: 751px;
     margin:32px 310px;
+    
 }
 .list img{
     object-fit: contain;
-    width:60px;
+    width:160px;
+    height:100px;
 
+}
+span{
+    font-size: x-large;
+    font-weight: 600;
+}
+.text-info{
+    font-weight:400;
+    font-size:large;
+    padding-left: 11px;
+    max-width: 160px;
+    text-align: center;
+    border:1px solid red;
+}
+ .text-link {
+    color: inherit;
+    text-decoration: inherit;
 }
