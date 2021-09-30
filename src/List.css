@@ -1,14 +1,21 @@
+
 .list{
     border: 1px solid black;
-    max-width: 751px;
-    margin:32px 310px;
-    
+    max-width: 791px;
+    margin-left:290px;
+    margin-top:32px;
+    display:flex;
+    flex-wrap: wrap;
+   overflow: hidden;
 }
 .list img{
     object-fit: contain;
     width:160px;
     height:100px;
-
+    margin-left:0;
+    margin-right:20px;
+    margin-bottom:0;
+    border:1px solid blue;
 }
 span{
     font-size: x-large;
@@ -20,7 +27,11 @@ span{
     padding-left: 11px;
     max-width: 160px;
     text-align: center;
+    margin-top:0;
     border:1px solid red;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color: rgb(226 211 211);
 }
  .text-link {
     color: inherit;

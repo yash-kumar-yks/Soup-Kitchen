@@ -4,14 +4,14 @@ import ShowItem from './ShowItem';
 import './List.css';
 function List({ data, val }) {
     return (
-        <div>
+        <div  className="list" >
             
             {data && data.map((datas) => {
                 
                 if(datas.name==val){
                    return(
                    
-                    <div  className="list" key={datas.id}>
+                    <div key={datas.id}>
                     <Link  className='text-link' to={`/ShowItem/${datas.id}`}>
                     <img src ={datas.src} key={datas.id} alt=""/>
                    <div className="text-info">
