@@ -1,6 +1,7 @@
 import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
+import './ShowItem.css';
 const ShowItem = ({data}) => {
   const { id } = useParams();
   const history = useHistory();
@@ -20,21 +21,22 @@ const ShowItem = ({data}) => {
     }) 
   }
   return (
-    <div className="blog-details">
+    <div className="item-details">
     {data && (
       
     
     <>
-      <article>
-        <h2>{ data.name }</h2>
+      <div className="item-property">
+        <h4><span> {data.quantity}</span> Kg { data.name }</h4>
        <img src={data.src} alt =""/>
        
-      </article>
-    
+      </div>
+    <div className="text">
     <Link to={`/EditItem/${id}`}>
     <button > Update Item</button>
   </Link>
     <button onClick={handleClick} type="submit"> Delete Item</button>
+    </div>
   </>
     )}
     </div>

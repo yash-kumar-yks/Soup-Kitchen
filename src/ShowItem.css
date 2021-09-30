@@ -1,0 +1,31 @@
+.item-property{
+   margin-top:75px;
+   margin-left:386px;
+    border:1px solid black;
+   
+}
+.item-details{
+    border:1px solid red;
+    
+}
+.text{
+margin:0 386px 386px ;
+font-weight:100;
+
+}
+span{
+    font-size: x-large;
+    font-weight: 600;
+}
+.text button{
+    background-color: rgb(25, 26, 25);
+    border: none;
+    color:  rgb(245, 243, 239);
+    padding: 5px 11px;
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+    margin-right:4px;
+    font-size: 12px;
+    cursor: pointer;
+}

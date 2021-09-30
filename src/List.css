@@ -1,5 +1,6 @@
 
 .list{
+    
     border: 1px solid black;
     max-width: 791px;
     margin-left:290px;
@@ -7,14 +8,16 @@
     display:flex;
     flex-wrap: wrap;
    overflow: hidden;
+   
 }
 .list img{
     object-fit: contain;
     width:160px;
-    height:100px;
+    height:107px;
     margin-left:0;
     margin-right:20px;
     margin-bottom:0;
+    padding:0;
     border:1px solid blue;
 }
 span{
@@ -24,16 +27,17 @@ span{
 .text-info{
     font-weight:400;
     font-size:large;
-    padding-left: 11px;
     max-width: 160px;
     text-align: center;
-    margin-top:0;
+    margin-top:-4px;
+    margin-bottom: 20px;
     border:1px solid red;
     padding-top:20px;
     padding-bottom:20px;
-    background-color: rgb(226 211 211);
+    background-color: rgb(215 226 211);
 }
  .text-link {
     color: inherit;
     text-decoration: inherit;
+    margin:0;
 }

@@ -13,7 +13,7 @@ function List({ data, val }) {
                    
                     <div key={datas.id}>
                     <Link  className='text-link' to={`/ShowItem/${datas.id}`}>
-                    <img src ={datas.src} key={datas.id} alt=""/>
+                    <img src ={datas.src} alt=""/>
                    <div className="text-info">
                     <p> <span> {datas.quantity}</span> kg {datas.name} </p>
                     </div>

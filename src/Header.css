@@ -2,11 +2,12 @@
 .logo_img{
     object-fit: contain;
     width:90px;
-    margin-left: 120px;
+    margin-left: 100px;
     cursor: pointer;
     /* border:1px solid red; */
 }
 .logo_div{
+    height:95px;
     padding-left:25vh;
     display:flex;
     align-items: center;
@@ -30,7 +31,7 @@
     cursor: pointer;
 }
 .logo_name{
-    margin-right:20vh;
+    margin-right:21vh;
     margin-left:10px;
     cursor: pointer;
     /* border:1px solid red; */
