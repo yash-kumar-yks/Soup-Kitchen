@@ -1,17 +1,23 @@
 .item-property{
    margin-top:75px;
    margin-left:386px;
-    border:1px solid black;
+    /* border:1px solid black; */
    
 }
-.item-details{
+/* .item-details{
     border:1px solid red;
     
-}
+} */
 .text{
 margin:0 386px 386px ;
 font-weight:100;
 
+}
+img{
+    object-fit: contain;
+    width:400px;
+    height:400px;
+    margin-bottom: 0;
 }
 span{
     font-size: x-large;

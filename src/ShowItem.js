@@ -8,7 +8,7 @@ const ShowItem = () => {
   const { id } = useParams();
   const history = useHistory();
   const [{data}, dispatch] = useStateValue();
-  console.log("data from showitem.js", id);
+ 
   let item=null;
   data.map((data)=>{
     if(data.id==id)
@@ -21,7 +21,7 @@ const ShowItem = () => {
       id: id,
 
   })
-
+  history.push('/');
 }
   return (
 
@@ -32,7 +32,7 @@ const ShowItem = () => {
     
       <>
       <div className="item-property">
-        <h4><span> {item.id}</span> Kg { item.name }</h4>
+        <h4><span> {item.quantity}</span> Kg { item.name }</h4>
        <img src={item.src} alt =""/>
        
       </div>

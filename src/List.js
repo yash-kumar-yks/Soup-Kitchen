@@ -15,7 +15,7 @@ function List({ data, val }) {
                     <Link  className='text-link' to={`/ShowItem/${datas.id}`}>
                     <img src ={datas.src} alt=""/>
                    <div className="text-info">
-                    <p> <span> {datas.id}</span> kg {datas.name} </p>
+                    <p> <span> {datas.quantity}</span> kg {datas.name} </p>
                     </div>
                    </Link>
                     </div>)

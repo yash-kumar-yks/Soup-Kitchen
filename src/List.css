@@ -1,7 +1,7 @@
 
 .list{
     
-    border: 1px solid black;
+    
     max-width: 791px;
     margin-left:290px;
     margin-top:32px;
@@ -18,7 +18,7 @@
     margin-right:20px;
     margin-bottom:0;
     padding:0;
-    border:1px solid blue;
+    /* border:1px solid blue; */
 }
 span{
     font-size: x-large;
@@ -31,7 +31,7 @@ span{
     text-align: center;
     margin-top:-4px;
     margin-bottom: 20px;
-    border:1px solid red;
+    /* border:1px solid red; */
     padding-top:20px;
     padding-bottom:20px;
     background-color: rgb(215 226 211);

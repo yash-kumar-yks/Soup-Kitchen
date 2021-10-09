@@ -24,9 +24,10 @@ function AddItem() {
         quantity: quantity
       }
     })
-    console.log(data);
+   
+    history.push('/');
   }
-  console.log(data);
+ 
   return (
     <div className="create">
       <h2>Add a New Item</h2>

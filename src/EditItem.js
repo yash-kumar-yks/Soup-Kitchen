@@ -13,7 +13,7 @@ function EditItem() {
     if(data.id==id)
     items=data;
   })
-console.log(items);
+
     const [name, setName] = useState(items.name);
   const [src, setSrc] = useState(items.src);
   const [quantity, setQuantity] = useState((parseInt)(items.quantity));
@@ -41,7 +41,7 @@ const decrement = () => {
     }
   })
 
-
+  history.push('/');
   }
 
 
@@ -59,7 +59,9 @@ const decrement = () => {
 
               onChange={(e) => setName(e.target.value)}
             />
+            
             <label>Image URL:</label>
+            
             <input
               type="text"
               required
