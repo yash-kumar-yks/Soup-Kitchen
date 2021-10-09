@@ -1,27 +1,32 @@
 import React from 'react'
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useStateValue } from './StateProvider';
+import { v4 as uuidv4 } from 'uuid';
+  
 function AddItem() {
 
-    
+  const [data, dispatch] = useStateValue();
   const [name, setName] = useState('');
   const [src, setSrc] = useState('');
   const [quantity, setQuantity] = useState(0);
   const history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { name, src, quantity };
    
-    fetch('http://localhost:8000/items/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    }).then(() => {
-      //dispatch method='POST'
-      history.push('/');
+   
+    dispatch({
+      type: 'PUSH',
+      item: {
+        id:uuidv4(),
+        name: name,
+        src: src,
+        quantity: quantity
+      }
     })
+    console.log(data);
   }
-
+  console.log(data);
   return (
     <div className="create">
       <h2>Add a New Item</h2>

@@ -2,33 +2,38 @@ import { useHistory, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import EditItem from "./EditItem";
 import './ShowItem.css';
-const ShowItem = ({data}) => {
+import { useStateValue } from './StateProvider';
+
+const ShowItem = () => {
   const { id } = useParams();
   const history = useHistory();
+  const [{data}, dispatch] = useStateValue();
+  console.log("data from showitem.js", id);
   let item=null;
   data.map((data)=>{
     if(data.id==id)
     item=data;
   })
-  data=item;
-  console.log(item);
-  const handleDelete = () => {
-    fetch('http://localhost:8000/items/' + id, {
-      method: 'DELETE'
-    }).then(() => {
-      //dispatch method=='DELETE'
-      history.push('/');
-    }) 
-  }
+  
+    const handleDelete = () => {
+    dispatch({
+      type: "DELETE",
+      id: id,
+
+  })
+
+}
   return (
+
+  
     <div className="item-details">
-    {data && (
+    {item && (
       
     
-    <>
+      <>
       <div className="item-property">
-        <h4><span> {data.quantity}</span> Kg { data.name }</h4>
-       <img src={data.src} alt =""/>
+        <h4><span> {item.id}</span> Kg { item.name }</h4>
+       <img src={item.src} alt =""/>
        
       </div>
     <div className="text">
@@ -37,9 +42,10 @@ const ShowItem = ({data}) => {
   </Link>
     <button onClick={handleDelete} type="submit"> Delete Item</button>
     </div>
-  </>
+    </>
     )}
     </div>
+   
   );
 }
  

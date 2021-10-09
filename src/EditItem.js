@@ -1,18 +1,22 @@
 import React from 'react'
 import { useHistory, useParams} from "react-router-dom";
 import { useState } from 'react';
-function EditItem({data}) {
+import { v4 as uuidv4 } from 'uuid';
+import { useStateValue } from './StateProvider';
+function EditItem() {
   const { id } = useParams();
- let item=null;
- data.map((data)=>{
-  if(data.id==id)
-  item=data;
-})
-data=item;
-
-    const [name, setName] = useState(data.name);
-  const [src, setSrc] = useState(data.src);
-  const [quantity, setQuantity] = useState((parseInt)(data.quantity));
+ 
+  
+    const [{data}, dispatch] = useStateValue();
+    let items=null;
+  data.map((data)=>{
+    if(data.id==id)
+    items=data;
+  })
+console.log(items);
+    const [name, setName] = useState(items.name);
+  const [src, setSrc] = useState(items.src);
+  const [quantity, setQuantity] = useState((parseInt)(items.quantity));
   const history = useHistory();
   const increment = () => {
     setQuantity(quantity =>quantity + 1);
@@ -23,26 +27,28 @@ const decrement = () => {
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data2 = { name, src, quantity };
-    fetch('http://localhost:8000/items/' + id, {
-      method: 'DELETE'
-    })
-    fetch('http://localhost:8000/items/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data2)
-    }).then(() => {
-      history.push('/');
-      //dispatch method='POST'
-    })
+    dispatch({
+      type: "DELETE",
+      id: id,
+  })
+  dispatch({
+    type: 'PUSH',
+    item: {
+      id:uuidv4(),
+      name: name,
+      src: src,
+      quantity: quantity
+    }
+  })
+
+
   }
 
 
   
   return (
-    <div>{
-       data && (
-         <>
+    <div>
+      
         {console.log('b')}
           <form onSubmit={handleSubmit}>
             <label>Item Name:</label>
@@ -81,8 +87,7 @@ const decrement = () => {
           </form>
           <button onClick={increment} > + </button>
           <button onClick={decrement} > - </button>
-      </>
-      )}
+     
 
     </div>
 

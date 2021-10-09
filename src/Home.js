@@ -1,27 +1,27 @@
-import useFetch from "./useFetch";
 import { useState } from "react";
 import List from "./List";
 import './Home.css';
+import { useStateValue } from "./StateProvider";
 const Home = () => {
   const [val, setVal] = useState('ShowAll')
-  const { error, isPending, data: datas } = useFetch('http://localhost:8000/items');
+const [{data}, dispatch] = useStateValue();
+
   const click = (e) => {
     setVal(String(e.target.innerHTML));
 
   }
   return (
     <div className="home">
-      {error && <div>{error}</div>}
-      {isPending && <h1 >Loading...</h1>}
+      
       <div className="home-buttons" >
-      {datas && datas.map(data => (
+      {data && data.map(data => (
            
           <button onClick={click} key={data.id} type="submit">{data.name}</button>
         
        
       ))}
       </div>
-      <List val={val} data={datas} />
+      <List val={val} data={data} />
     </div>
   );
 }
