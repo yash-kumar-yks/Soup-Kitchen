@@ -12,7 +12,7 @@ const ShowItem = ({data}) => {
   })
   data=item;
   console.log(item);
-  const handleClick = () => {
+  const handleDelete = () => {
     fetch('http://localhost:8000/items/' + id, {
       method: 'DELETE'
     }).then(() => {
@@ -35,7 +35,7 @@ const ShowItem = ({data}) => {
     <Link to={`/EditItem/${id}`}>
     <button > Update Item</button>
   </Link>
-    <button onClick={handleClick} type="submit"> Delete Item</button>
+    <button onClick={handleDelete} type="submit"> Delete Item</button>
     </div>
   </>
     )}
