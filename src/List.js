@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import ShowItem from './ShowItem';
 import './List.css';
-function List({ data, val }) {
+import { useStateValue } from './StateProvider';
+function List({ val }) {
+    const [{data}, dispatch] = useStateValue();
     return (
         <div  className="list" >
             
