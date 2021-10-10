@@ -74,7 +74,6 @@ function AddItem() {
       label="Amount" 
       variant="outlined" 
       color="primary" 
-      
       type="number"
       min="0"
       fullWidth

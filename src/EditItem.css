@@ -1,0 +1,18 @@
+.div_button input{
+    padding:10px;
+    background-color: rgb(113, 212, 121);
+    border: none;
+    margin-left:4px;
+    max-width:37px;
+    font-size:large;
+    margin-bottom: 4px;
+}
+.div_button{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.div_button{
+    display: flex;
+    flex-wrap: wrap;
+}
