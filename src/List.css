@@ -2,8 +2,8 @@
 .list{
     
     
-    max-width: 791px;
-    margin-left:290px;
+     max-width: 791px;
+    margin-left:290px; 
     margin-top:32px;
     display:flex;
     flex-wrap: wrap;
@@ -11,9 +11,9 @@
    
 }
 .list img{
-    object-fit: contain;
-    width:160px;
-    height:107px;
+    object-fit:cover;
+    width:242px;
+    height:161px;
     margin-left:0;
     margin-right:20px;
     margin-bottom:0;
@@ -27,14 +27,15 @@ span{
 .text-info{
     font-weight:400;
     font-size:large;
-    max-width: 160px;
+    max-width: 242px;
     text-align: center;
-    margin-top:-4px;
+    margin-top:-2px;
     margin-bottom: 20px;
     /* border:1px solid red; */
     padding-top:20px;
     padding-bottom:20px;
-    background-color: rgb(215 226 211);
+    background-color: lightcoral;
+    color:white;
 }
  .text-link {
     color: inherit;

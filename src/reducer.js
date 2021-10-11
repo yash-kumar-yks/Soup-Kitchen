@@ -19,8 +19,8 @@ export const initialState = {
           "id": 7
         },
         {
-          "name": "banana",
-          "src": "https://media.istockphoto.com/photos/red-apple-picture-id184276818?k=20&m=184276818&s=612x612&w=0&h=QxOcueqAUVTdiJ7DVoCu-BkNCIuwliPEgtAQhgvBA_g=",
+          "name": "apple",
+          "src": "https://post.healthline.com/wp-content/uploads/2020/09/health-benefits-of-apples-732x549-thumbnail-732x549.jpg",
           "quantity": 3,
           "id": 8
         }

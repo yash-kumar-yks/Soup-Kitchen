@@ -5,7 +5,9 @@
     margin-left:4px;
     max-width:37px;
     font-size:large;
+    font-weight: 200;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 .div_button{
     display: flex;

@@ -82,7 +82,7 @@ function AddItem() {
         />
        
         <Button 
-         
+        type="submit"
           color="secondary" 
           variant="contained"
           size="small"
