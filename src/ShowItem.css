@@ -24,7 +24,6 @@ span{
     font-weight: 600;
 }
 .text button{
-    background-color: rgb(25, 26, 25);
     border: none;
     color:  rgb(245, 243, 239);
     padding: 5px 11px;
@@ -34,4 +33,9 @@ span{
     margin-right:4px;
     font-size: 12px;
     cursor: pointer;
+    background-color: #f44336;
+}
+
+.text button:hover{
+    background: #da190b;
 }
