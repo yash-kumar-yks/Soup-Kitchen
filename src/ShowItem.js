@@ -32,7 +32,7 @@ const ShowItem = () => {
     
       <>
       <div className="item-property">
-        <h4><span> {item.quantity}</span> Kg { item.name }</h4>
+        <h2><span> {item.quantity}</span> Kg { item.name }</h2>
        <img src={item.src} alt =""/>
        
       </div>
