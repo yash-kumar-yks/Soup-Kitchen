@@ -2,7 +2,7 @@
 .logo_img{
     object-fit: contain;
     width:90px;
-    margin-left: 100px;
+    margin-left: 200px;
     cursor: pointer;
     /* border:1px solid red; */
 }

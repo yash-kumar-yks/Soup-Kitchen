@@ -34,7 +34,7 @@
 .home-buttons{
     max-width: 770px;
     margin-top: 16px;
-    margin-left:285px;
+    margin-left:390px;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -46,4 +46,7 @@
     background-color: #8e3e81;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+  }
+  .home button:focus {
+    background-color:rgb(180, 81, 164);
   }
