@@ -23,77 +23,77 @@ function AddItem() {
   const [name, setName] = useState('');
   const [src, setSrc] = useState('');
   const [quantity, setQuantity] = useState(0);
- 
+
   const classes = useStyles()
   const handleSubmit = (e) => {
     e.preventDefault();
-   
-   
+
+
     dispatch({
       type: 'PUSH',
       item: {
-        id:uuidv4(),
+        id: uuidv4(),
         name: name,
         src: src,
         quantity: quantity
       }
     })
-   
+
     history.push('/');
   }
- 
+
   return (
     <Container size="sm">
-    <Typography
-    variant="h5" 
-    color="textSecondary"
-    component="h2"
-    gutterBottom
-  >
-  Add a New Item
-  </Typography>
-      
+      <Typography
+        variant="h5"
+        color="textSecondary"
+        component="h2"
+        gutterBottom
+      >
+        Add a New Item
+      </Typography>
+
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-      <TextField className={classes.field}
-      label="Name" 
-      variant="outlined" 
-      color="primary" 
-      fullWidth
-      required
-      onChange={(e) => setName(e.target.value)}
+        <TextField className={classes.field}
+          label="Name"
+          variant="outlined"
+          color="primary"
+          fullWidth
+          required
+          onChange={(e) => setName(e.target.value)}
         />
         <TextField className={classes.field}
-      label="Image URL" 
-      variant="outlined" 
-      color="primary" 
-      fullWidth
-      required
+          label="Image URL"
+          variant="outlined"
+          color="primary"
+          fullWidth
+          required
           onChange={(e) => setSrc(e.target.value)}
         />
         <TextField className={classes.field}
-      label="Amount" 
-      variant="outlined" 
-      color="primary" 
-      type="number"
-      min="0"
-      fullWidth
-      required
+          label="Amount"
+          variant="outlined"
+          color="primary"
+          type="number"
+          min="0"
+          fullWidth
+          required
           onChange={(e) => setQuantity(e.target.value)}
         />
-       
-        <Button 
-        type="submit"
-          color="secondary" 
+
+        <Button
+          type="submit"
+          color="secondary"
           variant="contained"
           size="small"
           endIcon={<KeyboardArrowRightIcon />}>
           Add Item
         </Button>
       </form>
-   </Container>
+    </Container>
   );
 }
- 
+
 
 
 export default AddItem

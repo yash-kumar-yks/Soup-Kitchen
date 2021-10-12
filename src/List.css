@@ -42,3 +42,8 @@ span{
     text-decoration: inherit;
     margin:0;
 }
+.text-info button{
+    background-color: #a96f8f !important;
+    padding: 9px 13px;
+    font-size: 17px;
+}

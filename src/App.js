@@ -6,12 +6,12 @@ import EditItem from './EditItem';
 import AddItem from './AddItem';
 import Home from './Home';
 function App() {
-  
- return (
-   <div>
-   
-    <Router>
-      
+
+  return (
+    <div>
+
+      <Router>
+
         <div className="content">
           <Switch>
             <Route exact path="/">
@@ -19,22 +19,22 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/EditItem/:id">
-            <Header />
-            <EditItem />
+              <Header />
+              <EditItem />
             </Route>
             <Route exact path="/AddItem">
-            <Header  />
-            <AddItem />
+              <Header />
+              <AddItem />
             </Route>
             <Route exact path="/ShowItem/:id">
-            <Header />
+              <Header />
               <ShowItem />
             </Route>
           </Switch>
         </div>
-    
+
       </Router>
-      </div>
+    </div>
   );
 }
 

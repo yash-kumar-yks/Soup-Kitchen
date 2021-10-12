@@ -16,6 +16,21 @@
   border-radius: 8px;
   box-shadow: 0 5px #999;
 }
+/* .home input{
+  margin-left:580px;
+    max-width: fit-content;
+    padding: 20px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 999px;
+    margin-top:20px;
+  }
+  
+  .home input[type=text]:focus{
+    outline: 1px solid rgb(141, 66, 129);
+    border: 1px white;
+  } */
+
 .home-buttons{
     max-width: 770px;
     margin-top: 16px;
